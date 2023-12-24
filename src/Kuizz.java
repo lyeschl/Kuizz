@@ -11,7 +11,7 @@ public class Kuizz {
     } 
     private static JFrame createFrame1() {
         // Create the first frame
-        JFrame frame1 = new JFrame("Frame 2:");
+        JFrame frame1 = new JFrame("Frame 1:");
         frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame1.setSize(500, 400);
 
