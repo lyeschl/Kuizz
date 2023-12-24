@@ -272,10 +272,10 @@ private static JFrame createFrame3() {
 
 
 
-private static void startTimer(JFrame frame, int seconds) {
-    // Implement a timer for Frame 3
-    // You can use a Swing Timer to update the timerLabel every second
-}
+// private static void startTimer(JFrame frame, int seconds) {
+//     // Implement a timer for Frame 3
+//     // You can use a Swing Timer to update the timerLabel every second
+// }
 
 private static JFrame createFrame4() {
     // Create Frame 4
