@@ -16,10 +16,9 @@ public class Kuizz {
         frame1.setSize(500, 400);
 
         // Create the label, text field and buttons
-        JLabel label = new JLabel("Choose a Mode:");
-        JTextField textField = new JTextField(20);
-        JButton button1 = new JButton("Easy Mode");
-        JButton button2 = new JButton("Hard Mode (with timer)");
+        JLabel label = new JLabel("Pick a Game Mode:",SwingConstants.CENTER);
+        JButton button1 = new JButton("Easy Peasy Mode");
+        JButton button2 = new JButton("Challenge Mode (with timer)");
 
         // Create an action listener for the buttons
         ActionListener actionListener = new ActionListener() {
@@ -39,22 +38,40 @@ public class Kuizz {
             }
         };
 
-        // Add the action listener to the buttons
-        button1.addActionListener(actionListener);
-        button2.addActionListener(actionListener);
+    // Add the action listener to the buttons
+    button1.addActionListener(actionListener);
+    button2.addActionListener(actionListener);
 
-        // Set the size of the buttons
-        button1.setPreferredSize(new Dimension(100, 40));
-        button2.setPreferredSize(new Dimension(100, 40));
+    // Set the size of the buttons
+    button1.setPreferredSize(new Dimension(150, 50));
+    button2.setPreferredSize(new Dimension(200, 50));
 
-        // Add the label, text field and buttons to the first frame
-        frame1.getContentPane().add(label, BorderLayout.NORTH);
-        frame1.getContentPane().add(textField, BorderLayout.CENTER);
-        frame1.getContentPane().add(button1, BorderLayout.WEST);
-        frame1.getContentPane().add(button2, BorderLayout.EAST);
+    // Set the background color of the label and buttons
+    label.setOpaque(true); 
+    label.setBackground(Color.YELLOW); 
+    button1.setBackground(Color.PINK); 
+    button2.setBackground(Color.CYAN); 
 
+    // Create a GridBagConstraints object to specify the layout constraints
+    GridBagConstraints constraints = new GridBagConstraints();
+    constraints.gridx = 0;
+    constraints.gridy = 0;
+    constraints.gridwidth = 2;
+    constraints.fill = GridBagConstraints.HORIZONTAL;
+    constraints.insets = new Insets(10, 10, 10, 10); // add some spacing around the components
 
-        return frame1;
+    // Add the label and buttons to the first frame using GridBagLayout
+    frame1.getContentPane().setLayout(new GridBagLayout());
+    frame1.getContentPane().add(label, constraints);
+
+    constraints.gridy = 1;
+    constraints.gridwidth = 1;
+    frame1.getContentPane().add(button1, constraints);
+
+    constraints.gridx = 1;
+    frame1.getContentPane().add(button2, constraints);
+
+    return frame1;
         }
     private static JFrame createFrame2() {
         // Create the second frame
