@@ -15,6 +15,9 @@ public class Kuizz {
         frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame1.setSize(500, 400);
 
+        // Set the background color of the frame
+        frame1.getContentPane().setBackground(new Color(204, 255, 204)); // pastel green
+
         // Create the label, text field and buttons
         JLabel label = new JLabel("Pick a Game Mode:",SwingConstants.CENTER);
         JButton button1 = new JButton("Easy Peasy Mode");
