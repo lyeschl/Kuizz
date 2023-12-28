@@ -46,40 +46,49 @@ public class Kuizz {
             }
         };
 
-    // Add the action listener to the buttons
-    button1.addActionListener(actionListener);
-    button2.addActionListener(actionListener);
+        // Add the action listener to the buttons
+        button1.addActionListener(actionListener);
+        button2.addActionListener(actionListener);
 
-    // Set the size of the buttons
-    button1.setPreferredSize(new Dimension(150, 50));
-    button2.setPreferredSize(new Dimension(200, 50));
+        // Set the size of the buttons
+        button1.setPreferredSize(new Dimension(150, 50));
+        button2.setPreferredSize(new Dimension(200, 50));
 
-    // Set the background color of the label and buttons
-    label.setOpaque(true); 
-    label.setBackground(Color.YELLOW); 
-    button1.setBackground(Color.PINK); 
-    button2.setBackground(Color.CYAN); 
+        // Set the background color of the label and buttons
+        label.setOpaque(true); 
+        label.setBackground(Color.YELLOW); 
+        button1.setBackground(Color.PINK); 
+        button2.setBackground(Color.CYAN); 
 
-    // Create a GridBagConstraints object to specify the layout constraints
-    GridBagConstraints constraints = new GridBagConstraints();
-    constraints.gridx = 0;
-    constraints.gridy = 0;
-    constraints.gridwidth = 2;
-    constraints.fill = GridBagConstraints.HORIZONTAL;
-    constraints.insets = new Insets(10, 10, 10, 10); // add some spacing around the components
+        // Create a GridBagConstraints object to specify the layout constraints
+        GridBagConstraints constraints = new GridBagConstraints();
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        constraints.gridwidth = 2;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.insets = new Insets(10, 10, 10, 10); // add some spacing around the components
 
-    // Add the label and buttons to the first frame using GridBagLayout
-    frame1.getContentPane().setLayout(new GridBagLayout());
-    frame1.getContentPane().add(label, constraints);
+        // Add the label and buttons to the first frame using GridBagLayout
+        frame1.getContentPane().setLayout(new GridBagLayout());
+        frame1.getContentPane().add(label, constraints);
 
-    constraints.gridy = 1;
-    constraints.gridwidth = 1;
-    frame1.getContentPane().add(button1, constraints);
+        constraints.gridy = 1;
+        constraints.gridwidth = 1;
+        frame1.getContentPane().add(button1, constraints);
 
-    constraints.gridx = 1;
-    frame1.getContentPane().add(button2, constraints);
-
-    return frame1;
+        constraints.gridx = 1;
+        frame1.getContentPane().add(button2, constraints);
+        JButton exitButton = new JButton("Exit"); // Create a new JButton
+        exitButton.setFont(font);
+        exitButton.setBackground(Color.green); 
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0); // Close the application by terminating the process
+            }
+        });
+        frame1.add(exitButton);
+        return frame1;
         }
     private static JFrame createFrame2() {
         // Create the second frame (Easy Mode)
@@ -158,7 +167,16 @@ public class Kuizz {
 
         constraints.gridy = 5;
         frame2.getContentPane().add(button4, constraints);
-
+        JButton exitButton = new JButton("Exit"); // Create a new JButton
+        exitButton.setFont(font);
+        exitButton.setBackground(Color.green); 
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0); // Close the application by terminating the process
+            }
+        });
+        frame2.add(exitButton);
         return frame2;
     }
 private static JFrame createFrame3() {
@@ -266,7 +284,16 @@ private static JFrame createFrame3() {
         }
     });
     timer.start();
-
+    JButton exitButton = new JButton("Exit"); // Create a new JButton
+    exitButton.setFont(font);
+    exitButton.setBackground(Color.green); 
+    exitButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.exit(0); // Close the application by terminating the process
+        }
+    });
+    frame3.add(exitButton);
     return frame3;
 }
 
@@ -330,6 +357,16 @@ private static JFrame createFrame4() {
     constraints.gridy = 1;
     frame4.getContentPane().add(returnToQuizButton, constraints);
 
+    JButton exitButton = new JButton("Exit"); // Create a new JButton
+    exitButton.setFont(font);
+    exitButton.setBackground(Color.green); 
+    exitButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.exit(0); // Close the application by terminating the process
+        }
+    });
+    frame4.add(exitButton);
     return frame4;
 }
 
